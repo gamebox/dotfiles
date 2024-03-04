@@ -1,0 +1,100 @@
+:h
+:browse Text.Parsec.Combinator 
+:browse Text.Parsec
+:m +Text.Parsec
+:q
+:w
+:browse System.IO
+:m + System.IO
+:q
+parse (p_expr) "()" "abc"
+p_expr = CIdent <$> string "abc"
+parse (p_expr) "()" "abc"
+data CExpr = CIdent String deriving (Show)
+parse (p_expr) "()" "abc"
+p_expr = CIdent <$> string "abc"
+data CExpr = CIdent String
+:t string
+:t strign
+:t toCharList
+:t oneOf ['a'..'z']
+:t parse
+:m + Text.Parsec
+:q
+parse (p_cexpr) "(unknown)" "a"
+parse (p_cexpr) "(unknown)" "a"
+p_cexpr = CIdent <$ oneOf ['a'..'z']
+parse (p_cexpr) "(unknown)" "a"
+data CExpr = CIdent deriving (Show)
+parse (p_cexpr) "(unknown)" "a"
+p_cexpr = CIdent <$ oneOf ['a'..'z']
+data CExpr = CIdent
+:t (<$)
+:t (<$>)
+:t (<*>)
+:t liftM2
+:m + Control.Monad
+:t liftM2
+:m + Text.Parsec
+:q
+:t many1
+:t oneOf
+:m + Text.Parsec
+:q
+parse (char 'a') "(unknown)" "a"
+parse
+:m + Text.Parsec
+:browse Text.Parsec
+ :q
+parse parens "" "()"
+let parens = (many parenSet >> eof) <|> eof
+let parenSet = char '(' >> many parenSet >> char ')' :: Parsec String () Char
+:m +Text.Parsec
+:q
+:doc putChar
+putChar
+:q
+:doc getChar
+void $ execProgram (bfparse ",[.,]") (cellstate)
+execProgram (bfparse ",[.,]") (cellstate)
+bfparse ",[.,]"
+cscurrent (csprev (csprev state))
+cscurrent (csnext (csnext state))
+cscurrent (csnext state)
+cscurrent state
+state <- execProgram inss (cellstate)
+cscurrent state
+state =  execProgram inss (cellstate)
+void $ execProgram inss (cellstate)
+execProgram inss (cellstate)
+inss = read "[Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Loop [Next,Incr,Incr,Incr,Incr,Loop [Next,Incr,Incr,Next,Incr,Incr,Incr,Next,Incr,Incr,Incr,Next,Incr,Prev,Prev,Prev,Prev,Decr,Eof],Next,Incr,Next,Incr,Next,Decr,Next,Next,Incr,Loop [Prev,Eof],Prev,Decr,Eof],Next,Next,Print,Next,Decr,Decr,Decr,Print,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Print,Print,Incr,Incr,Incr,Print,Next,Next,Print,Prev,Decr,Print,Prev,Print,Incr,Incr,Incr,Print,Decr,Decr,Decr,Decr,Decr,Decr,Print,Decr,Decr,Decr,Decr,Decr,Decr,Decr,Decr,Print,Next,Next,Incr,Print,Next,Incr,Incr,Print,Eof]" :: [Ins]
+:l bf
+:q
+cscurrent (csprev (csprev (csprev (csprev state))))
+csprev (csprev (csprev (csprev (cscurrent state))))
+cscurrent state
+state <- execProgram inss (cellstate)
+void $ execProgram inss (cellstate)
+inss = read "[Next,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Loop [Prev,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Next,Decr,Eof],Next,Decr,Decr,Next,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Loop [Prev,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Next,Decr,Eof],Next,Incr,Next,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Loop [Prev,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Next,Decr,Eof],Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Next,Next,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Loop [Prev,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Next,Decr,Eof],Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Next,Next,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Loop [Prev,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Next,Decr,Eof],Incr,Prev,Prev,Prev,Prev,Prev,Prev,Print,Next,Print,Next,Print,Next,Print,Next,Print,Eof]" :: [Ins]
+read "[Next,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Loop [Prev,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Next,Decr,Eof],Next,Decr,Decr,Next,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Loop [Prev,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Next,Decr,Eof],Next,Incr,Next,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Loop [Prev,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Next,Decr,Eof],Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Next,Next,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Loop [Prev,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Next,Decr,Eof],Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Next,Next,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Loop [Prev,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Next,Decr,Eof],Incr,Prev,Prev,Prev,Prev,Prev,Prev,Print,Next,Print,Next,Print,Next,Print,Next,Print,Eof]" :: [Ins]
+:l bf
+:m + Parse
+read "[Next,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Loop [Prev,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Next,Decr,Eof],Next,Decr,Decr,Next,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Loop [Prev,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Next,Decr,Eof],Next,Incr,Next,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Loop [Prev,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Next,Decr,Eof],Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Next,Next,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Loop [Prev,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Next,Decr,Eof],Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Next,Next,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Loop [Prev,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Next,Decr,Eof],Incr,Prev,Prev,Prev,Prev,Prev,Prev,Print,Next,Print,Next,Print,Next,Print,Next,Print,Eof]" :: [Ins]
+read "cr,Incr,Incr,Loop [Prev,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Incr,Next,Decr,Eof],Incr,Prev,Prev,Prev,Prev,Prev,Prev,Print,Next,Print,Next,Print,Next,Print,Next,Print,Eof]
+:q
+:l bf
+:l bf
+:l bf
+:l bf
+:l
+map (fromEnum) "Hello, world!"
+map (fromEnum) "Hello, world!"
+fromEnum 'H'
+void $ execIns Print (csset (cellstate) 99)
+void $ execIns Print (cellstate)
+execIns Print (cellstate)
+cscurrent state
+state
+state <- execProgram [Incr, Incr, Incr, Print] (cellstate)
+cscurrent state
+state = execProgram [Incr, Incr, Incr, Print] (cellstate)
