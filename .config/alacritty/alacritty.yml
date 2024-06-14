@@ -5,7 +5,7 @@ env:
   TERM: xterm-256color
 window:
   startup_mode: "Maximized"
-  decorations: "Transparent"
+  decorations: "Full"
   padding: { x: 0, y: 32 }
 font:
   size: 14.0

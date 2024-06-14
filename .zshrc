@@ -17,6 +17,8 @@ export GO_HOME="/Users/anthonybullard/sdk/go1.22.0/bin"
 export GO_BIN="/Users/anthonybullard/go/bin"
 export PATH="$GO_BIN:$GO_HOME:$PATH"
 
+export PATH="/Users/anthonybullard/.local/bin:$PATH"
+
 export PATH="/Users/anthonybullard/.local/bin/roc:$PATH"
 
 eval "$(starship init zsh)"
