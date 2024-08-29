@@ -26,15 +26,22 @@ brew install tmux
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 ```
 
-### Install Alacritty
+### Install Wezterm
 
-Go to [the website](https://alacritty.org/) and get the latest release
-
+```sh
+brew install --cask wezterm
+```
 
 ### Install starship
 
 ```sh
 brew install starship
+```
+
+### Install aerospace
+
+```sh
+brew install --cask nikitabobko/tap/aerospace
 ```
 
 ### Install nvm for node

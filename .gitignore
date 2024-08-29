@@ -1,0 +1,4 @@
+tmux/.config/tmux/plugins
+zed/.config/zed/prompts
+zed/.config/zed/embeddings
+zed/.config/zed/.tmp*

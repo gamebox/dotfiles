@@ -1,0 +1,26 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "theme": "Catppuccin Mocha",
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "cursor_blink": false,
+  "vim_mode": true,
+  "scrollbar": { "show": "never" },
+  "vertical_scroll_margin": 0,
+  "relative_line_numbers": true,
+  "lsp": {
+    "zls": {
+      "binary": {
+        "path": "/Users/anthonybullard/.local/share/nvim/mason/bin/zls"
+      }
+    }
+  },
+  "show_whitespaces": "boundary"
+}
