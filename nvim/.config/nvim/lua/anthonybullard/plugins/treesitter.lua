@@ -18,6 +18,7 @@ return {
                     "typescript",
                     "templ",
                     "go",
+                    "itch",
                 },
                 -- Autoinstall languages that are not installed
                 auto_install = true,
@@ -53,10 +54,27 @@ return {
                 },
                 maintainers = { "@IndianBoy42" },
             }
+            treesitter_parser_config.itch = {
+                install_info = {
+                    url = "https://github.com/gamebox/tree-sitter-itch",
+                    files = { "src/parser.c" },
+                    branch = "main",
+                },
+                filetype = "itch",
+            }
+            treesitter_parser_config.roc = {
+                install_info = {
+                    url = "https://github.com/gamebox/tree-sitter-roc",
+                    files = { "src/parser.c", "src/scanner.c" },
+                },
+                filetype = "roc",
+            }
 
             vim.treesitter.language.register("templ", "templ")
             vim.treesitter.language.register("just", { "just", "justfile", "Justfile" })
             vim.treesitter.language.register("html", { "gwirl" })
+            vim.treesitter.language.register("itch", "itch")
+            vim.treesitter.language.register("roc", { "roc" })
 
             -- There are additional nvim-treesitter modules that you can use to interact
             -- with nvim-treesitter. You should go explore a few and see what interests you:
@@ -68,4 +86,6 @@ return {
     },
     "vrischmann/tree-sitter-templ",
     "IndianBoy42/tree-sitter-just",
+    "gamebox/tree-sitter-itch",
+    "gamebox/tree-sitter-roc",
 }

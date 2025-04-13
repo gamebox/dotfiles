@@ -80,6 +80,7 @@ local function config()
                 -- certain features of an LSP (for example, turning off formatting for tsserver)
                 server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
                 require("lspconfig")[server_name].setup(server)
+                require("lspconfig")["roc_ls"].setup({ filetypes = { "roc" } })
             end,
         },
     })
@@ -103,5 +104,15 @@ return {
             { "j-hui/fidget.nvim", opts = {} },
         },
         config = config,
+    },
+    {
+        "S1M0N38/love2d.nvim",
+        cmd = "LoveRun",
+        opts = {},
+        keys = {
+            { "<leader>v", ft = "lua", desc = "LÖVE" },
+            { "<leader>vv", "<cmd>LoveRun<cr>", ft = "lua", desc = "Run LÖVE" },
+            { "<leader>vs", "<cmd>LoveStop<cr>", ft = "lua", desc = "Stop LÖVE" },
+        },
     },
 }

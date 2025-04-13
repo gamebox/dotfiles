@@ -1,5 +1,6 @@
-if [ ! -z "$GO_VERSION"];
+if [[ "$GO_VERSION" == "" ]];
 then
+    echo "Setting GO to version 1.22.0"
     export GO_VERSION="1.22.0"
 fi
 

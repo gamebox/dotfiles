@@ -56,6 +56,8 @@ Go to [go.dev] and grab the latest release.
 
 ### (Optional) Install rust toolchain
 
+**NEVER** install with homebrew or your life will suck.
+
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup toolchain install nightly # You might want stable channel instead

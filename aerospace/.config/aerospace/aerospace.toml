@@ -44,6 +44,10 @@ key-mapping.preset = 'qwerty'
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
+[[on-window-detected]]
+    if.app-name-regex-substring = "LÖVE"
+    run = ["layout tiling", "move-node-to-workspace 2"]
+
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
 # - Constant:     gaps.outer.top = 8
@@ -52,12 +56,12 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 8
-inner.vertical =   8
-outer.left =       8
-outer.bottom =     8
-outer.top =        8
-outer.right =      8
+inner.horizontal = 16
+inner.vertical =   16
+outer.left =       32
+outer.bottom =     32
+outer.top =        32
+outer.right =      32
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
